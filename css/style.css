@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Lemonada:wght@500&family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+:root {
+  --color: #ffd900; }
+
+body {
+  background-image: url(../img/backg.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Roboto", sans-serif; }
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%; }
+  header nav .nav-link {
+    position: relative; }
+  header nav .nav-link::after {
+    content: "";
+    width: 0%;
+    height: 3px;
+    background: var(--color);
+    position: absolute;
+    bottom: 0%;
+    top: 30px;
+    left: 50%;
+    border-radius: 10px;
+    transition: all 500ms ease; }
+  header nav .nav-link:hover::after {
+    left: 0%;
+    width: 100%; }
+  header nav .logo {
+    margin-top: 10px;
+    margin-left: 10px; }
+    header nav .logo img {
+      top: 10px;
+      position: relative; }
+  header nav .navbar {
+    margin-top: 5px;
+    padding-right: 17px;
+    margin-right: 10px; }
+  header nav ul a {
+    text-decoration: none;
+    padding: 0 30px;
+    color: black;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: 550;
+    transition: 0.7s; }
+  header nav ul a:hover {
+    color: var(--color); }
+
+nav span {
+  font-size: 30px;
+  font-family: "Lemonada", cursive; }
+
+svg {
+  overflow: visible; }
+
+.test {
+  width: 100%;
+  height: 5px;
+  display: flex; }
+
+.cls-2 {
+  fill: var(--color) !important; }
+
+.test div {
+  width: calc(100% / 5); }
+
+.test .D1 {
+  background-color: #c2ffdd; }
+
+.test .D2 {
+  background-color: var(--color); }
+
+#cat-hand {
+  animation: cat 2s ease infinite;
+  transform-origin: center;
+  transform-box: fill-box; }
+
+@keyframes cat {
+  0% {
+    transform: translateX(0px) translateY(-20px) rotate(-30deg); }
+  40% {
+    transform: translateX(14px) translateY(-20px) rotate(-30deg); }
+  50% {
+    transform: translateX(0px) translateY(-20px) rotate(-30deg); }
+  100% {
+    transform: translateX(0px) translateY(-20px) rotate(-30deg); } }
+
+#cap {
+  animation: cap 2s ease infinite;
+  transform-origin: center;
+  transform-box: fill-box; }
+
+@keyframes cap {
+  0% {
+    transform: translate(-231px) rotate(0deg); }
+  16% {
+    transform: translate(-231px) rotate(0deg); }
+  40% {
+    transform: translate(-231px) rotate(18deg); }
+  60% {
+    transform: translate(-231px) rotate(-7deg); }
+  70% {
+    transform: translate(-231px) rotate(5deg); }
+  80% {
+    transform: translate(-231px) rotate(-3deg); }
+  90% {
+    transform: translate(-231px) rotate(2deg); }
+  100% {
+    transform: translate(-231px) rotate(0deg); } }
+
+#head {
+  transition: 1s ease;
+  cursor: pointer;
+  transform-origin: center;
+  transform-box: fill-box; }
+  #head:hover {
+    transform: translateY(55px) scale(1.1); }
+
+.banner-area {
+  display: flex;
+  justify-content: space-around; }
+  .banner-area .banner-img {
+    height: 600px;
+    margin-top: 50px;
+    margin-right: -50px; }
+  .banner-area .left-area {
+    margin-top: 180px; }
+
+.title-text h3 {
+  font-size: 50px;
+  margin: 10px 0; }
+
+.title-text h1 {
+  font-size: 80px;
+  text-transform: uppercase;
+  margin: 10px 0; }
+
+.title-text h4 {
+  font-size: 24px;
+  margin: 10px 0; }
+
+.title-text .you-code {
+  color: var(--color); }
+
+.title-text h3::after {
+  content: " ";
+  height: 2px;
+  width: 18vw;
+  background: var(--color);
+  display: inline-block;
+  margin-left: 5%;
+  transform: translateY(-10px);
+  border-radius: 10px; }
+
+.btn {
+  color: var(--color);
+  border: 3px solid var(--color);
+  background: none;
+  padding: 10px 40px;
+  font-size: 16px;
+  border: 3px solid;
+  margin-left: 40px;
+  margin-top: 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+  position: relative;
+  transition: all 0.5s;
+  border-radius: 2px; }
+
+.hire-me:hover {
+  background: var(--color);
+  color: white;
+  border: 3px solid var(--color); }
+
+.hire-me::before,
+.hire-me::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 3px solid var(--color);
+  transition: all 0.5s;
+  border-radius: 2px; }
+
+.hire-me::before {
+  top: -10px;
+  left: -10px;
+  border-width: 3px 0 0 3px; }
+
+.hire-me::after {
+  bottom: -10px;
+  right: -10px;
+  border-width: 0 3px 3px 0; }
+
+.hire-me:hover::before,
+.hire-me:hover::after {
+  width: calc(100% + 23px);
+  height: calc(100% + 23px); }
+
+.get-cv {
+  padding: 10px 45px;
+  overflow: hidden;
+  transition: 1s all ease;
+  border: 3px solid var(--color); }
+
+.get-cv:hover {
+  color: white; }
+
+.get-cv::before {
+  content: "";
+  background: var(--color);
+  position: absolute;
+  height: 380%;
+  width: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  z-index: -1;
+  transition: all 0.8s ease; }
+
+.get-cv:hover::before {
+  width: 100%; }
