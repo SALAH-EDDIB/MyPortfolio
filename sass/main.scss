@@ -4,10 +4,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: none;
 }
 
 :root {
-  --color: #ffd900;
+  --color: "#2dc7aa";
 }
 
 body {
@@ -15,6 +16,85 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   font-family: "Roboto", sans-serif;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #c2ffdd;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color);
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+}
+
+#cursor {
+  height: 20px;
+  width: 20px;
+  border: 2px solid var(--color);
+  position: absolute;
+  border-radius: 50%;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.active::after {
+  content: "";
+  height: 20px;
+  width: 20px;
+  border: 1110px solid var(--color);
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: cursoranim 0.3s;
+}
+
+@keyframes cursoranim {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.animate-box {
+  width: 10px;
+  height: 10px;
+  background-color: var(--color);
+  border-radius: 50%;
+  position: absolute;
+  z-index: -10000;
+  animation: box 60s infinite;
+  top: 50px;
+  left: -300px;
+}
+
+@keyframes box {
+  from {
+    transform: translateX(0px) translateY(0);
+  }
+  50% {
+    transform: translateX(2000px) translateY(100px);
+  }
+  51% {
+    transform: translateX(2000px) translateY(300px);
+  }
+  99% {
+    transform: translateX(0px) translateY(600px);
+  }
+  from {
+    transform: translateX(0px) translateY(0);
+  }
 }
 
 header nav {
@@ -22,7 +102,7 @@ header nav {
   justify-content: space-between;
   align-items: center;
 
-  padding: 20px 10%;
+  padding: 20px 8% 20px 10%;
 
   .nav-link {
     position: relative;
@@ -66,7 +146,7 @@ header nav {
       text-decoration: none;
       padding: 0 30px;
       color: black;
-      font-size: 25px;
+      font-size: 22px;
       text-transform: uppercase;
       font-weight: 550;
       transition: 0.7s;
@@ -103,10 +183,10 @@ svg {
   width: calc(100% / 5);
 }
 
-.test .D1 {
+.test .D2 {
   background-color: #c2ffdd;
 }
-.test .D2 {
+.test .D1 {
   background-color: var(--color);
 }
 
@@ -213,7 +293,7 @@ svg {
 
 .title-text h3::after {
   content: " ";
-  height: 2px;
+  height: 4px;
   width: 18vw;
   background: var(--color);
   display: inline-block;
@@ -226,7 +306,7 @@ svg {
   color: var(--color);
   border: 3px solid var(--color);
   background: none;
-  padding: 10px 40px;
+  padding: 10px 60px;
   font-size: 16px;
   border: 3px solid;
   margin-left: 40px;
@@ -238,46 +318,12 @@ svg {
   border-radius: 2px;
 }
 
-.hire-me:hover {
-  background: var(--color);
-  color: white;
-  border: 3px solid var(--color);
-}
-
-.hire-me::before,
-.hire-me::after {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  border: 3px solid var(--color);
-  transition: all 0.5s;
-
-  border-radius: 2px;
-}
-
-.hire-me::before {
-  top: -10px;
-  left: -10px;
-  border-width: 3px 0 0 3px;
-}
-
-.hire-me::after {
-  bottom: -10px;
-  right: -10px;
-  border-width: 0 3px 3px 0;
-}
-
-.hire-me:hover::before,
-.hire-me:hover::after {
-  width: calc(100% + 23px);
-  height: calc(100% + 23px);
-}
-
 .get-cv {
   padding: 10px 45px;
   overflow: hidden;
   transition: 1s all ease;
+
+  border-radius: 55px;
 
   border: 3px solid var(--color);
 }
@@ -301,4 +347,36 @@ svg {
 
 .get-cv:hover::before {
   width: 100%;
+}
+
+.hire-me {
+  padding: 10px 45px;
+  overflow: hidden;
+  transition: 1s all ease;
+
+  border-radius: 55px;
+  color: white;
+
+  border: 3px solid var(--color);
+}
+
+.hire-me:hover {
+  color: var(--color);
+}
+
+.hire-me::before {
+  content: "";
+  background: var(--color);
+  position: absolute;
+  height: 380%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  z-index: -1;
+  transition: all 0.8s ease;
+}
+
+.hire-me:hover::before {
+  width: 0;
 }
