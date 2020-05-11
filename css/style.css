@@ -36,7 +36,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  pointer-events: none; }
+  pointer-events: none;
+  z-index: 111; }
 
 .active::after {
   content: "";
@@ -131,8 +132,15 @@ svg {
   height: 5px;
   display: flex; }
 
-.cls-2 {
+.cls-2,
+.fls-8,
+.sls-3,
+.sls-5,
+.dlf-4 {
   fill: var(--color) !important; }
+
+.fls-10 {
+  stroke: var(--color) !important; }
 
 .test div {
   width: calc(100% / 5); }
@@ -290,3 +298,77 @@ svg {
 
 .hire-me:hover::before {
   width: 0; }
+
+.servises {
+  text-align: center;
+  margin-bottom: 100px; }
+  .servises h1 {
+    font-size: 34px;
+    color: var(--color);
+    margin: 2rem auto; }
+  .servises p {
+    font-size: 20px;
+    width: 50%;
+    margin: 4rem auto;
+    color: #575656; }
+  .servises__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%; }
+    .servises__container div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column-reverse;
+      background-color: #f8fdfa;
+      margin: auto;
+      padding: 1rem 2rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.041), 0 6px 20px 0 rgba(0, 0, 0, 0.055);
+      transition: all 0.4s ease-in-out; }
+      .servises__container div:hover {
+        transform: scale(1.05); }
+      .servises__container div h2 {
+        color: var(--color);
+        margin-top: 2rem;
+        position: relative; }
+      .servises__container div svg {
+        height: 300px;
+        width: 90%; }
+
+.servise1 svg {
+  transform: scale(1.1); }
+
+.servise1 h2::after {
+  content: "01";
+  z-index: 11;
+  color: var(--color);
+  position: absolute;
+  font-size: 60px;
+  top: -250%;
+  left: 150%;
+  opacity: 0.5;
+  color: var(--color); }
+
+.servise2 h2::after {
+  content: "02";
+  z-index: 11;
+  color: var(--color);
+  position: absolute;
+  font-size: 60px;
+  top: -250%;
+  left: 150%;
+  opacity: 0.5;
+  color: var(--color); }
+
+.servise3 h2::after {
+  content: "03";
+  z-index: 11;
+  color: var(--color);
+  position: absolute;
+  font-size: 60px;
+  top: -250%;
+  left: 180%;
+  opacity: 0.5;
+  color: var(--color); }
