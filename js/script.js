@@ -42,3 +42,73 @@ function animCursor() {
     cursor.classList.remove("active");
   });
 }
+
+const slides = document.querySelector(".slider").children;
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
+const inducator = document.querySelector(".inducator");
+let index = 0;
+
+prev.addEventListener("click", () => {
+  prevSlide();
+});
+
+next.addEventListener("click", () => {
+  nextSlide();
+});
+
+function nextSlide() {
+  if (index == slides.length - 1) {
+    index = 0;
+  } else {
+    index++;
+  }
+  inducator.innerHTML = "";
+  circleInducator();
+  changeSlide();
+  resetTimer();
+}
+
+function prevSlide() {
+  if (index == 0) {
+    index = slides.length - 1;
+  } else {
+    index--;
+  }
+  inducator.innerHTML = "";
+  circleInducator();
+  changeSlide();
+  resetTimer();
+}
+
+function changeSlide() {
+  for (i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("activate");
+  }
+
+  slides[index].classList.add("activate");
+}
+
+function circleInducator() {
+  for (i = 0; i < slides.length; i++) {
+    const div = document.createElement("div");
+
+    if (i == index) {
+      div.classList.add("activate");
+    }
+
+    inducator.appendChild(div);
+  }
+}
+
+circleInducator();
+
+function autoPlay() {
+  nextSlide();
+}
+function resetTimer() {
+  clearInterval(timer);
+  timer = setInterval(autoPlay, 4000);
+}
+
+let timer = setInterval(autoPlay, 4000);
