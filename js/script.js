@@ -14,9 +14,14 @@ const color = [
   "#57606f",
 ];
 
+const preloader = document.querySelector(".preload");
 window.addEventListener("load", randomColor);
 
 document.addEventListener("click", randomColor);
+
+window.addEventListener("load", () => {
+  preloader.classList.add("end");
+});
 
 function randomColor() {
   const newColor = color[Math.floor(Math.random() * 13)];
