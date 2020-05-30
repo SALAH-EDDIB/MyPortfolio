@@ -6,6 +6,11 @@
     <title>Click!</title>
     <link rel="shortcut icon" type="image/png" href="img/logo1.png" />
     <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"
+      integrity="sha256-+Q/z/qVOexByW1Wpv81lTLvntnZQVYppIL1lBdhtIq0="
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
@@ -30,10 +35,10 @@
           </div>
           <div class="navbar">
             <ul>
-              <il><a href="#" class="nav-link">home</a></il>
-              <il><a href="#" class="nav-link">about</a></il>
+              <il><a href="#" class="nav-link">Home</a></il>
+              <il><a href="#project" class="nav-link">Projects</a></il>
 
-              <il><a href="#" class="nav-link">contacts</a></il>
+              <il><a href="#footer" class="nav-link">Contacts</a></il>
             </ul>
           </div>
         </nav>
@@ -55,8 +60,12 @@
             </div>
 
             <div class="btns">
-              <button type="button" class="hire-me btn">hire me</button>
-              <button type="button" class="get-cv btn">Get cv</button>
+              <a href="#footer">
+                <button type="button" class="hire-me btn">hire me</button></a
+              >
+              <a href="img/profile (2).pdf">
+                <button type="button" class="get-cv btn">Get cv</button>
+              </a>
             </div>
           </div>
           <div class="banner-img">
@@ -3974,7 +3983,7 @@
 
     <!--------------------------------------- start project  -------------------------------------->
 
-    <section class="projects-container">
+    <section id="project" class="projects-container">
       <h1 class="projects_title">Here are some projects !</h1>
 
       <p class="projects_para">
@@ -3992,10 +4001,11 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Nesciunt, commodi.
               </p>
-              <button class="visit">
-                Visit
-                <span></span>
-              </button>
+              <a href="https://salah-eddib.github.io/covid-19/Test.html"
+                ><button class="visit">
+                  Visit
+                  <span></span></button
+              ></a>
             </div>
           </div>
           <div class="img_box"><img src="img/covid.svg" alt="" /></div>
@@ -4010,10 +4020,12 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Nesciunt, commodi.
               </p>
-              <button class="visit">
-                Visit
-                <span></span>
-              </button>
+              <a
+                href="https://salah-eddib.github.io/javascript-mini-projects/days/index.html"
+                ><button class="visit">
+                  Visit
+                  <span></span></button
+              ></a>
             </div>
           </div>
           <div class="img_box"><img src="img/days!.svg" alt="" /></div>
@@ -4028,10 +4040,13 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Nesciunt, commodi.
               </p>
-              <button class="visit">
-                Visit
-                <span></span>
-              </button>
+              <a
+                href="https://youweb3.netlify.app/team%20and%20client/index.html"
+              >
+                <button class="visit">
+                  Visit
+                  <span></span></button
+              ></a>
             </div>
           </div>
           <div class="img_box"><img src="img/youweb.svg" alt="" /></div>
@@ -4046,10 +4061,13 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Nesciunt, commodi.
               </p>
-              <button class="visit">
-                Visit
-                <span></span>
-              </button>
+              <a
+                href="https://salah-eddib.github.io/javascript-mini-projects/photoIn/"
+              >
+                <button class="visit">
+                  Visit
+                  <span></span></button
+              ></a>
             </div>
           </div>
           <div class="img_box"><img src="img/poto.svg" alt="" /></div>
@@ -4062,6 +4080,73 @@
     </section>
 
     <div class="inducator"></div>
+
+    <!--------------------------------------- End project  -------------------------------------->
+
+    <!--------------------------------------- start footer  -------------------------------------->
+
+    <footer id="footer">
+      <div class="contact">
+        <h1>Contact Info</h1>
+        <div>
+          <span><i class="fas fa-map-marked-alt"></i></span>
+
+          <p>
+            N°94 Rue Naser Qu saada Yossoufia,Maroc
+          </p>
+        </div>
+        <div>
+          <span><i class="fas fa-envelope-open-text"></i></span>
+
+          <p>
+            salaheddib.55@gmail.com
+          </p>
+        </div>
+        <div>
+          <span><i class="fas fa-phone-alt"></i></span>
+
+          <p>
+            0658154722
+          </p>
+        </div>
+
+        <div class="icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="contact_form">
+        <h2>Send a message</h2>
+        <form method="POST" data-netlify="true" autocomplete="off">
+          <div class="formbox">
+            <div class="inputbox w50">
+              <input type="text" name="firstname" required />
+              <span>First Name</span>
+            </div>
+            <div class="inputbox w50">
+              <input type="text" name="lastname" required />
+              <span>Last Name</span>
+            </div>
+            <div class="inputbox w50">
+              <input type="text" name="email" required />
+              <span>Email Adress</span>
+            </div>
+            <div class="inputbox w50">
+              <input type="text" name="number" required />
+              <span>Mobile Number</span>
+            </div>
+            <div class="inputbox w100">
+              <textarea name="message"></textarea>
+              <span>Write your message here </span>
+            </div>
+            <div class="inputbox w100">
+              <input type="submit" name="submit" value="send" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </footer>
 
     <script src="js/script.js"></script>
   </body>

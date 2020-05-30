@@ -5,13 +5,20 @@ const color = [
   "#3f80b5",
   "#d67078",
   "#09a5b2",
-  " #af0f06",
+  "#af0f06",
   "#f98883",
   "#1f2c33",
   "#F97F51",
   "#FD7272",
   "#58B19F",
   "#57606f",
+  "#4a69bd",
+  "#fa983a",
+  "#3c6382",
+  "#38ada9",
+  "#60a3bc",
+  "#1B9CFC",
+  "#B33771",
 ];
 
 const preloader = document.querySelector(".preload");
@@ -24,7 +31,7 @@ window.addEventListener("load", () => {
 });
 
 function randomColor() {
-  const newColor = color[Math.floor(Math.random() * 13)];
+  const newColor = color[Math.floor(Math.random() * 20)];
 
   const colorSvg = document.querySelector(".cls-2 ");
 
