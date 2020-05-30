@@ -24,7 +24,13 @@ const color = [
 const preloader = document.querySelector(".preload");
 window.addEventListener("load", randomColor);
 
-document.addEventListener("click", randomColor);
+document.addEventListener("click", (e) => {
+  if (e.target.localName == "input") {
+    return;
+  }
+
+  randomColor();
+});
 
 window.addEventListener("load", () => {
   preloader.classList.add("end");
@@ -34,9 +40,9 @@ function randomColor() {
   const newColor = color[Math.floor(Math.random() * 20)];
 
   const colorSvg = document.querySelector(".cls-2 ");
+  animCursor();
 
   document.documentElement.style.setProperty("--color", newColor);
-  animCursor();
 }
 
 const cursor = document.querySelector("#cursor");
