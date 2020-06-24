@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Lemonada:wght@500&family=Roboto&display=swap");
 
+@mixin mq($width) {
+  @media (max-width: #{$width}) {
+    @content;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -137,6 +143,9 @@ header nav {
     left: 50%;
     border-radius: 10px;
     transition: all 500ms ease;
+    @include mq(800px) {
+      content: none;
+    }
   }
 
   .nav-link:hover::after {
@@ -157,6 +166,42 @@ header nav {
     margin-top: 5px;
     padding-right: 17px;
     margin-right: 10px;
+    @include mq(800px) {
+      display: none;
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      background-color: #f8fdfa;
+      left: 50%;
+      top: 150px;
+      transform: translateX(-50%);
+      padding: 40px 70px 20px;
+      z-index: 10000000;
+      border-radius: 10px;
+      &.actives {
+        display: block;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        position: relative;
+        il {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+
+  .burger {
+    display: none;
+    @include mq(800px) {
+      display: block;
+      font-size: 40px;
+      color: var(--color);
+      cursor: pointer;
+    }
   }
 
   ul {
@@ -186,7 +231,6 @@ nav {
 svg {
   overflow: visible;
 }
-
 .test {
   width: 100%;
   height: 5px;
@@ -288,15 +332,23 @@ svg {
 .banner-area {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 
   .banner-img {
     height: 600px;
     margin-top: 50px;
     margin-right: -50px;
+    @include mq(470px) {
+      transform: scale(0.7);
+      margin-top: 20px;
+    }
   }
 
   .left-area {
     margin-top: 180px;
+    @include mq(985px) {
+      margin-top: 30px;
+    }
   }
 }
 
@@ -304,17 +356,26 @@ svg {
   h3 {
     font-size: 50px;
     margin: 10px 0;
+    @include mq(470px) {
+      font-size: 30px;
+    }
   }
 
   h1 {
     font-size: 80px;
     text-transform: uppercase;
     margin: 10px 0;
+    @include mq(470px) {
+      font-size: 50px;
+    }
   }
 
   h4 {
     font-size: 24px;
     margin: 10px 0;
+    @include mq(470px) {
+      font-size: 20px;
+    }
   }
 
   .you-code {
@@ -347,6 +408,11 @@ svg {
   position: relative;
   transition: all 0.5s;
   border-radius: 2px;
+  @include mq(470px) {
+    margin-left: 5px;
+    font-size: 11px;
+    padding: 10px 40px;
+  }
 }
 
 .get-cv {
@@ -419,16 +485,23 @@ svg {
     font-size: 34px;
     color: var(--color);
     margin: 2rem auto;
+    @include mq(470px) {
+      margin: 0rem auto;
+    }
   }
   p {
     font-size: 20px;
     width: 50%;
     margin: 4rem auto;
     color: rgb(87, 86, 86);
+    @include mq(470px) {
+      width: 80%;
+    }
   }
   &__container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
     padding: 0 5%;
 
@@ -440,14 +513,20 @@ svg {
 
       background-color: #f8fdfa;
       margin: auto;
+      margin-bottom: 50px;
       padding: 1rem 2rem;
       border-radius: 20px;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.041),
         0 6px 20px 0 rgba(0, 0, 0, 0.055);
       transition: all 0.4s ease-in-out;
-
+      @include mq(450px) {
+        transform: scale(0.8);
+      }
       &:hover {
         transform: scale(1.05);
+        @include mq(450px) {
+          transform: scale(0.8);
+        }
       }
       h2 {
         color: var(--color);
@@ -478,6 +557,12 @@ svg {
       left: 130%;
       opacity: 0.5;
       color: var(--color);
+      @include mq(450px) {
+        left: 50%;
+        transform: translateX(-50%);
+        top: -350%;
+        font-size: 90px;
+      }
     }
   }
 }
@@ -492,6 +577,12 @@ svg {
     left: 130%;
     opacity: 0.5;
     color: var(--color);
+    @include mq(450px) {
+      left: 50%;
+      transform: translateX(-50%);
+      top: -350%;
+      font-size: 90px;
+    }
   }
 }
 .servise3 h2 {
@@ -505,6 +596,12 @@ svg {
     left: 170%;
     opacity: 0.5;
     color: var(--color);
+    @include mq(450px) {
+      left: 50%;
+      transform: translateX(-50%);
+      top: -350%;
+      font-size: 90px;
+    }
   }
 }
 
@@ -535,6 +632,7 @@ svg {
 .slide {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap-reverse;
   align-items: center;
   position: absolute;
   display: none;
@@ -555,6 +653,10 @@ svg {
 .img_box {
   width: 40%;
   animation: slide 2s ease forwards;
+  @include mq(900px) {
+    width: 60%;
+    margin-bottom: 40px;
+  }
   img {
     width: 100%;
   }
@@ -589,17 +691,26 @@ svg {
 
 .text {
   text-align: left;
+  @include mq(670px) {
+    margin-left: 20%;
+  }
 
   h1 {
     color: var(--color);
     font-size: 40px;
     margin-bottom: 30px;
+    @include mq(670px) {
+      font-size: 30px;
+    }
   }
   p {
     width: 80%;
     text-align: left;
     margin-top: 30px;
     margin-bottom: 20px;
+    @include mq(670px) {
+      font-size: 19px;
+    }
   }
 }
 
@@ -616,7 +727,9 @@ svg {
   color: var(--color);
   overflow: hidden;
   margin-top: 20px;
-
+  @include mq(670px) {
+    font-size: 18px;
+  }
   span {
     position: absolute;
     top: 0;
@@ -676,6 +789,9 @@ svg {
     z-index: 222;
     top: 65%;
     left: 2%;
+    @include mq(670px) {
+      top: 30%;
+    }
   }
 
   .next {
@@ -683,6 +799,9 @@ svg {
     z-index: 222;
     top: 65%;
     right: 2%;
+    @include mq(670px) {
+      top: 30%;
+    }
   }
 }
 
@@ -691,6 +810,9 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center;
+  @include mq(900px) {
+    margin: 30% auto 20px auto;
+  }
   div {
     width: 40px;
     height: 7px;
@@ -719,6 +841,14 @@ footer {
   left: 10%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.137),
     0 6px 20px 0 rgba(0, 0, 0, 0.205);
+
+  @include mq(1300px) {
+    left: 1%;
+  }
+  @include mq(900px) {
+    position: static;
+    width: 100%;
+  }
   span {
     font-size: 22px;
   }
@@ -761,7 +891,11 @@ footer {
     0 6px 20px 0 rgba(0, 0, 0, 0.034);
   width: 900px;
   margin-left: 30%;
-  padding-left: 200px;
+  padding-left: 10%;
+  @include mq(900px) {
+    margin-left: 0%;
+    width: 100%;
+  }
   h2 {
     color: var(--color);
     font-size: 27px;

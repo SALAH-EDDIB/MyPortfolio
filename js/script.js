@@ -130,3 +130,10 @@ function resetTimer() {
 }
 
 let timer = setInterval(autoPlay, 4000);
+
+const burger = document.querySelector(".burger");
+const navbar = document.querySelector(".navbar");
+
+burger.addEventListener("click", () => {
+  navbar.classList.toggle("actives");
+});
